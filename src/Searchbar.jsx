@@ -5,7 +5,7 @@ import usePlacesAutocomplete, {
 import useOnclickOutside from 'react-cool-onclickoutside';
 import { MdMyLocation } from 'react-icons/md';
 
-const Searchbar = ({ panTo, setMarker }) => {
+const Searchbar = ({ panTo, setMarker, contact, setContact }) => {
   const {
     ready, // ready: ready to use the Places Autocomplete service
     value, // value: the value of the input typed by user
@@ -88,6 +88,7 @@ const Searchbar = ({ panTo, setMarker }) => {
                       // console.log('address', results[0]);
                       const { lat, lng } = getLatLng(results[0]);
                       setMarker({ lat, lng });
+                      setContact({ ...contact, name: main_text });
                       panTo({ lat, lng }); // focussed on lat long
                       clearSuggestions(); // clear suggestions to remove dropdown
                     }}

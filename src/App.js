@@ -79,7 +79,12 @@ const App = () => {
   return (
     <div className='w-full h-screen'>
       <div className='w-[60rem] h-[30rem] mx-auto mt-10 border relative'>
-        <Searchbar panTo={panTo} setMarker={setMarker} />
+        <Searchbar
+          panTo={panTo}
+          setMarker={setMarker}
+          contact={contact}
+          setContact={setContact}
+        />
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           zoom={12}
